@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Welcome to jQuery</h2>
+
+    <p id="p1">This is paragraph 1</p>
+    <p id="p2">This is paragraph 2</p>
+    <p id="p3">This is paragraph 3</p>
+    <p id="p4">This is paragraph 4</p>
+
+    <div class="one">This is div 1</div>
+    <div class="one">This is div 2</div>
+    <div class="three">This is div 3</div>
+
+    
+    <script src="./script/jquery-3.6.3.js"></script>
+
+    <script>
+        // We need to make sure that our JS code does not run until the document is ready
+        $(document).ready(function(){
+            console.log('Document is ready !!')
+
+            // ********** Element selector **********
+            // Handle paragraph click
+            $('p').click(function(){
+                console.log('Clicked on the paragraph')
+                //$(this).hide(500) -> It will hide it. You can unhide it using .show()
+                //$(this).remove() -> It will remove the element. You can't get it back
+            })
+
+            // Handle div click
+            $('div').click(function(){
+                console.log('Clicked on the div')
+                //$('p').show() -> It will show (unhide) the elements
+            })
+
+            // ********** Id selector **********
+            $('#p1').click(function(){
+                console.log('p1 is clicked')
+                $(this).css('color','blue')
+            })
+
+            // ********** Class selector **********
+            $('.one').click(function(){
+                $(this).css({'color':'greenyellow',
+                               'background-color':'black'})
+            })
+
+
+
+        })
+
+
+
+    </script>
+
+</body>
+</html>

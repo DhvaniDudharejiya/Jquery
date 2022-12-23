@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector</title>
+
+    <style>
+        .myStyle{
+            color:blue;
+            font-size:x-large;
+            font-family: Urbanist;
+        }
+
+        p {
+            color:bisque   
+        }
+
+        .newFontStyle{
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>jQuery Selectors</h2>
+
+    <p class="myStyle">This is para 1</p>
+    <p class="myStyle">This is para 2</p>
+    <p class="myStyle">This is para 3</p>
+    <p>This is para 4</p>
+    <p>This is para 5</p>
+
+    <div>This is div 1</div>
+    <div class="myStyle">This is div 2</div>
+    <div>This is div 3</div>
+
+
+    
+    <script src="./script/jquery-3.6.3.js"></script>
+
+    <script>
+        // We need to make sure that our JS code does not run until the document is ready
+        $(document).ready(function(){
+
+            $("p").css("color","red")
+            $("p.myStyle").css("background-color","black")
+            $("p, div").css("background-color","bisque")
+            $("p:first").css("background-color", "black")
+            $("div").addClass("newFontStyle")
+         })
+    </script>
+
+</body>
+</html>

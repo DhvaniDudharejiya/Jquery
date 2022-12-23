@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .myStyle{
+            color:blue;
+             font-family: Urbanist;
+        }
+
+        p {
+            color: blueviolet  
+        }
+
+        .box {
+            background-color: blueviolet;
+            height: 100px;
+            width: 100px;
+            position: relative;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>jQuery Effects</h2>
+
+    <!-- Example 1: Show/Hide/Toggle/Remove -->
+    <p class="myStyle">This is para 1</p>
+    <p class="myStyle">This is para 2</p>
+    <p>This is para 3</p>
+    <p>This is para 4</p>
+
+    <button id="btnHide">Hide</button>
+    <button id="btnShow">Show</button>
+    <button id="btnToggle">Toggle</button>
+    <button id="btnRemove">Remove</button>
+
+    <hr>  
+    <!-- Example 2: Fade In / Fade Out  -->
+     <div id="d1" style="background-color: aqua;">This is div 1</div>
+    <br>
+    <div id="d2" style="background-color: greenyellow;">This is div 2</div>
+    <br>
+    <div id="d3" style="background-color: blueviolet;">This is div 3</div>
+    <br>
+    <button id="btnFadeIn">Fade In</button>
+    <button id="btnFadeOut">Fade Out</button>
+    <hr>
+    
+    <!-- Example 3: Slide up / Slide down -->
+    <button id="btnSlideDown">Slide Down</button>
+    <button id="btnSlideUp">Slide Up</button>
+    <button id="btnSlideToggle">Slide Toggle</button>
+    <hr>
+    <div id="banner" style="background-color: burlywood;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi vel accusantium eligendi ad suscipit, earum voluptate architecto, adipisci laborum fuga ex numquam porro atque? Non delectus vero sed ad suscipit corrupti a deserunt cumque amet quia veritatis quas earum facilis error mollitia cupiditate ullam quos, fuga debitis incidunt aperiam nemo.</div>    
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, eum. Incidunt architecto illo eos totam esse maxime pariatur dicta, sequi, nemo doloribus, tempora in voluptate repellat soluta ducimus autem sed!</p>
+
+    <!-- Example 4: Animation -->
+    <div class="box" id="box1">
+
+    </div>
+    <br>
+    <button id="btnMove">Move</button>
+
+    <script src="./script/jquery-3.6.3.js"></script>
+
+    <script>
+        // We need to make sure that our JS code does not run until the document is ready
+        $(document).ready(function(){
+            console.log('Document is ready...')
+
+            $('#btnHide').click(function(){
+                // $('p').hide()
+                // $('p').hide(2000)
+                $('p').hide(2000, function(){
+                    console.log('Paragraphs are hidden now...')
+                })
+            })
+
+            $('#btnShow').click(function(){
+                $('p').show(2000,function(){
+                    console.log('Paragraphs are shown now...')
+                })
+            })
+
+            // Toggle is going to toggle between hide/show
+            $('#btnToggle').click(function(){
+                $('p').toggle(800)
+            })
+
+            $('#btnRemove').click(function(){
+                $('p').remove() // All paras will be removed from dom.
+            })
+
+            // Example 2
+            $('#btnFadeIn').click(function(){
+                console.log('fade in...')
+                $('#d1').fadeIn(2000)
+                $('#d2').fadeIn(4000)
+                $('#d3').fadeIn(5000)
+            })
+
+            $('#btnFadeOut').click(function(){
+                console.log('fade out...')
+                $('#d1').fadeOut(2000)
+                $('#d2').fadeOut(4000)
+                $('#d3').fadeOut(5000)
+            })
+
+            // Example 3
+            $('#btnSlideDown').click(function(){
+                $('#banner').slideDown(400)
+            })
+
+            $('#btnSlideUp').click(function(){
+                $('#banner').slideUp(400)
+            })
+
+            $('#btnSlideToggle').click(function(){
+                $('#banner').slideToggle(400)
+            })
+
+            $('#btnMove').click(function(){
+                console.log('Animate...')
+                //$('#box1').animate({left:'+=50px'})
+                $('#box1').animate({left:'300px'}, 5000)
+            })
+
+
+        })
+    </script>
+
+</body>
+</html>
